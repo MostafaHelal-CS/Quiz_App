@@ -1,0 +1,232 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2b2d42;
+    font-size: 10px;
+}
+
+.container {
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .App {
+    width: 100%;
+    min-height: 450px;
+    background-color: #f8f9fa;    
+    border-radius:0.5em;
+    padding: 2em;
+    position: relative;
+    display: none;
+}
+
+.container .App .heading {
+    text-align: center;
+    font-size: 1.8em;
+    color: #ef233c;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+
+.container .App .QuestionNumber {
+    font-size: 2em;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.container .App .QuestionNumber span::before {
+    content: "[ ";
+    color: #ef233c;
+}
+
+.container .App .QuestionNumber span::after {
+    content: " ]";
+    color: #ef233c;
+}
+
+.container .App .questions {
+    width: 100%;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 1em;
+}
+
+.container .App .options {
+    width: 100%;
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #495057;
+}
+
+.container .App .options .answers {
+    width: 100%;
+    margin-bottom: 1em;
+    border: 2px solid #212529;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    transition: 0.4s ease-in-out;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .App .options .answers.clicked {
+    /* background-color: #ef233c; */
+    /* color: #edf2f4; */
+    /* border: 2px solid #edf2f4; */
+}
+.container .App .options .answers input{
+    margin-right: 1em;
+}
+
+.container .App .options .answers:hover {
+    border: 2px solid #ef233c;
+}
+
+.container .App .NextQue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.container .App .NextQue button#Next {
+    padding: 0.6em 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #ef233c;
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+    color: #f8f9fa;
+    cursor: pointer;
+    /* position: absolute; */
+    bottom: 2em;
+    right: 2em;
+    transition: 0.4s ease-in-out;
+    flex: 1;
+}
+
+.container .App .NextQue button#Next:hover {
+    background-color: #2b2d42;
+    color: #edf2f4;
+}
+
+.container .App .NextQue button#Next::before {
+    content: "Next Question >>";
+}
+
+#start {
+    padding: 0.6em 1em;
+    font-size: 3em;
+    font-weight: bold;
+    background-color: #ef233c;
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+    color: #f8f9fa;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #edf2f4;
+    margin-bottom: 1em;
+}
+
+.score {
+    font-size: 3em;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.staticics {
+    font-size: 2em;
+    color: #2b2d42;
+    border-radius: 0.5em;
+    padding: 1em;
+    display: none;
+}
+
+.staticics::before {
+    content: "Statistics";
+    display: block;
+    text-align: center;
+    color: #edf2f4  ;
+    font-size:1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #2b2d42;
+    padding: 0.3em;
+    border-bottom: 2px solid #edf2f4;
+}
+
+.staticsts-box {
+    background-color: #2b2d42;
+    color: #edf2f4;
+    padding: 1em;
+    /* border-radius: 0.5em; */
+}
+
+.staticsts-box > div {
+    padding: 0.5em;
+}
+
+.fail {
+    width: 100%;
+    padding: 1em;
+    background-color: #ef233c;
+    color: #edf2f4;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.congratz {
+    width: 100%;
+    padding: 1em;
+    background-color: #06d6a0;
+    color: #edf2f4;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media(max-width:768px){
+    .container {
+        width: 95%;
+    }
+    .container .App {
+        padding: 1em;
+    }
+
+    .container .App .heading {
+        font-size: 1.5em;
+        margin: 1em;
+    }
+    .score {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+    .staticics {
+        padding: 0;
+        margin-top: 2em;
+        font-size: 1.6em;
+    }
+    .staticsts-box > div {
+        margin: 1em 0;
+    }
+}
